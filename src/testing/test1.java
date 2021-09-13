@@ -17,12 +17,18 @@ public class test1 {
 		int size=5;
 		int size2=4;
 		CheckingAcc[] chAcc=new CheckingAcc[size];
+		for (int i=0;i<size;i++) {
+			chAcc[i]=new CheckingAcc();
+		}
 		chAcc[0].inititalize("Haris", "1-12-2020", "03408142381", "Muzaffarabad", 82204465, 350000);
 		chAcc[1].inititalize("Saad", "12-10-2019", "03438342331", "Mirpur", 81232465, 12000);
 		chAcc[2].inititalize("Omar", "9-9-2019", "03102453451", "Islamabad", 83232155, 10000);
 		chAcc[3].inititalize("Saman", "10-10-2020", "0331809811", "Multan", 85407483, 50000);
 		chAcc[4].inititalize("Rashid", "1-12-2020", "03228441231", "Rawalpindi", 61202729, 32100);
 		SavingsAcc[] savArr=new SavingsAcc[size2];
+		for (int i=0;i<size2;i++) {
+			savArr[i]=new SavingsAcc();
+		}
 		savArr[0].inititalize("Kashif", "1-1-2019", "0301445510", "Hyderabad", 71233412, 45100);
 		savArr[1].inititalize("Asif", "11-11-2020", "0310345614", "Bhimber", 7003522, 40000);
 		savArr[2].inititalize("Amara", "12-12-2019", "0341343520", "Kotli", 71096742, 2100);
@@ -105,7 +111,14 @@ public class test1 {
 					break;
 				}
 			}
-			
+			if(checkings==true)
+			{
+				chAcc[0].menu();
+			}
+			if(savings==true)
+			{
+				savArr[0].menu();
+			}
 			choice=var.nextByte();
 			while(choice<1||choice>6) {
 				System.out.print("Wrong input please enter again : ");
@@ -204,10 +217,10 @@ public class test1 {
 			if(choice == 5){
 				System.out.print("the balance is : ");
 				if(savings==true) {
-					savArr[accalter].getBalance();
+					System.out.print(savArr[accalter].getBalance());
 				}
 				if(checkings==true) {
-					chAcc[accalter].getBalance();
+					System.out.print(chAcc[accalter].getBalance());
 				}
 				
 			}
